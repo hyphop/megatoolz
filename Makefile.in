@@ -394,13 +394,7 @@ LDADD = \
 
 
 # tools
-EXTRA_DIST = lib/sjson.c $(man1_MANS) $(man5_MANS) LICENSE \
-	contrib/bash-completion/megatools docs/auth-options.txt \
-	docs/basic-options.txt docs/download-options.txt \
-	docs/footer.txt docs/megarc.txt $(addsuffix .txt,$(addprefix \
-	docs/megatools-,$(COMMANDS))) docs/megatools.txt \
-	docs/network-options.txt docs/remote-paths.txt \
-	docs/upload-options.txt docs/asciidoc.conf docs/Makefile
+
 megatools_SOURCES = \
 	lib/sjson.gen.c \
 	lib/sjson.h \
@@ -426,15 +420,6 @@ megatools_SOURCES = \
 	tools/shell.c \
 	tools/shell.h
 
-
-# docs
-MAN1 = megatools $(addprefix megatools-,$(COMMANDS))
-MAN5 = megarc
-man1_MANS = $(addprefix docs/,$(addsuffix .1, $(MAN1)))
-man5_MANS = $(addprefix docs/,$(addsuffix .5, $(MAN5)))
-doc_DATA = LICENSE NEWS TODO README INSTALL
-all: config.h
-	$(MAKE) $(AM_MAKEFLAGS) all-am
 
 .SUFFIXES:
 .SUFFIXES: .c .lo .o .obj

@@ -60,20 +60,6 @@ install-exec-hook:
 
 endif
 
-# docs
-
-MAN1 = megatools $(addprefix megatools-,$(COMMANDS))
-MAN5 = megarc
-
-man1_MANS = $(addprefix docs/,$(addsuffix .1, $(MAN1)))
-man5_MANS = $(addprefix docs/,$(addsuffix .5, $(MAN5)))
-
-EXTRA_DIST += $(man1_MANS) $(man5_MANS)
-
-EXTRA_DIST += LICENSE contrib/bash-completion/megatools
-
-doc_DATA = LICENSE NEWS TODO README INSTALL
-
 EXTRA_DIST += \
 	docs/auth-options.txt \
 	docs/basic-options.txt \
